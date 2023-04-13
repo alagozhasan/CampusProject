@@ -34,6 +34,12 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     public WebElement successMessage;
 
+    @FindBy(xpath = "//div[contains(text(),'already')]")
+    public WebElement existMessage;
+
+    @FindBy(xpath = "//div[contains(text(),'There is no data to display')]")
+    public WebElement noDisplayMessage;
+
     @FindBy(xpath = "//ms-text-field[@formcontrolname='shortName']/input")
     public WebElement shortName;
 
@@ -46,14 +52,32 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//ms-add-button[contains(@tooltip,'ADD')]//button")
     private WebElement addButton;
 
-    @FindBy(xpath = "//ms-text-field[@formcontrolname='name']/input")
+    @FindBy(xpath = "//ms-text-field[@data-placeholder='Name']/input")
     private WebElement nameInput;
+
+    @FindBy(xpath = "//input[@id='ms-text-field-1']")
+    public WebElement nameAttestation;
+
+    @FindBy(xpath = "//input[@id='ms-text-field-0']")
+    public WebElement nameSearch;
+
+    @FindBy(xpath = "//span[text()='Search']")
+    public WebElement searchButton;
 
     @FindBy(xpath = "//tr/td[2])")
     private List<WebElement> myDataOnList;
 
     @FindBy(tagName = "ms-edit-button")
     private WebElement lastItemEditBtn;
+
+    @FindBy(css = "svg[data-icon='pen-to-square']")
+    public WebElement editButton;
+
+    @FindBy(css = "[data-icon='trash-can']")
+    public WebElement deleteButton;
+
+    @FindBy(xpath = "//span[text()=' Delete ']")
+    public WebElement deleteConfirmButton;
 
     @FindBy(tagName = "ms-delete-button")
     private WebElement lastItemDeleteBtn;
@@ -70,6 +94,8 @@ public class DialogContent extends Parent {
                 return saveButton;
             case "nameInput":
                 return nameInput;
+            case "nameAttestation":
+                return nameAttestation;
             case "codeInput":
                 return codeInput;
             case "section":
@@ -84,6 +110,14 @@ public class DialogContent extends Parent {
                 return lastItemDeleteBtn;
             case "deleteDialogBtn":
                 return deleteDialogBtn;
+            case "searchButton":
+                return searchButton;
+            case "editButton":
+                return editButton;
+            case "deleteButton":
+                return deleteButton;
+            case "deleteConfirmButton":
+                return deleteConfirmButton;
 
         }
 
