@@ -5,6 +5,16 @@ Feature:
     When Enter username and password and click login button
     When User should login succesfully
 
+  Scenario: closing test of Dropdown menus
+    And Click on the leftnav but no function
+      | setup             |
+      | schoolSetup       |
+      | schoolDepartments |
+    Then Click on the leftnav arrow
+      | schoolSetupArrow |
+      | SetupArrow       |
+      And verify dropdown menu
+
   Scenario: Fill in the information and add, for the department
     And Click on the leftnav
       | setup             |
@@ -91,9 +101,9 @@ Feature:
 
     Then verify process
 
-    Scenario: Should not be deleted.
-      And Click on the leftnav
-        | setup             |
-        | schoolSetup       |
-        | schoolDepartments |
-      Then Read on list,for search my data name
+  Scenario: Should not be deleted.
+    And Click on the leftnav
+      | setup             |
+      | schoolSetup       |
+      | schoolDepartments |
+    Then Read on list,for search my data name

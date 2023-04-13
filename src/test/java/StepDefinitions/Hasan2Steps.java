@@ -5,6 +5,8 @@ import Pages.LeftNav;
 import io.cucumber.datatable.DataTable;
 import Utilities.GWD;
 import io.cucumber.java.en.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
@@ -79,11 +81,47 @@ public class Hasan2Steps {
 
     @Then("Read on list,for search my data name")
     public void readOnListForSearchMyDataName() {
-        for (WebElement e:dc.getMyDataOnList()) {
+        for (WebElement e : dc.getMyDataOnList()) {
             Assert.assertFalse(
                     e.getText().contains(myData)
             );
         }
 
     }
+
+    @Then("Click on the leftnav arrow")
+    public void clickOnTheLeftnavArrow(DataTable dt) {
+        List<String> buttons = dt.asList(String.class);
+        for (String btn : buttons) {
+            WebElement e = ln.getWebElement(btn);
+//            ln.clickFunction(e);
+            e.click();
+        }
+    }
+
+    @And("verify dropdown menu")
+    public void verifyDropdownMenu(DataTable dt) {
+        List<String> buttons = dt.asList(String.class);
+
+        for (String btn : buttons) {
+            WebElement e = ln.getWebElement(btn);
+            e.click();
+        }
+        Assert.assertFalse(
+                (ln.schoolSetup.isDisplayed() & ln.schoolDepartments.isDisplayed())
+        );
+    }
+
+    @And("Click on the leftnav but no function")
+    public void clickOnTheLeftnavButNoFunction(DataTable dt) {
+        List<String> buttons = dt.asList(String.class);
+
+        for (String btn : buttons) {
+            WebElement e = ln.getWebElement(btn);
+//            ln.clickFunction(e);
+            ln.waitUntilClickable(e);
+            e.click();
+        }
+    }
 }
+
