@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LeftNav extends Parent {
+
     public LeftNav() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
@@ -33,33 +34,30 @@ public class LeftNav extends Parent {
 
     @FindBy(xpath = "//span[text()='Attestations']")
     public WebElement attestations;
-    @FindBy(xpath = "//span[text()='Positions']")
-    public WebElement positions;
 
+    @FindBy(xpath = "//span[text()='Positions']")
+    private WebElement positions;
+
+    @FindBy(xpath = "//span[text()='Discounts']")
+    private WebElement discounts;
+
+    @FindBy(xpath = "//span[text()='Parameters']")
+    private WebElement parameters;
 
     public WebElement getWebElement(String element) {
 
         switch (element) {
-            case "setup":
-                return setup;
-            case "schoolSetup":
-                return schoolSetup;
-            case "schoolDepartments":
-                return schoolDepartments;
-
-            case "SetupArrow":
-                return SetupArrow;
-            case "schoolSetupArrow":
-                return schoolSetupArrow;
-
-            case "humanResources":
-                return humanResources;
-            case "hRSetup":
-                return hRSetup;
-            case "attestations":
-                return attestations;
-            case "positions":
-                return positions;
+            case "setup": return setup;
+            case "schoolSetup": return schoolSetup;
+            case "schoolDepartments": return schoolDepartments;
+            case "SetupArrow": return SetupArrow;
+            case "schoolSetupArrow": return schoolSetupArrow;
+            case "humanResources": return humanResources;
+            case "hRSetup": return hRSetup;
+            case "attestations": return attestations;
+            case "positions": return positions;
+            case "discounts": return discounts;
+            case "parameters" : return parameters;
         }
         return null;
     }

@@ -34,10 +34,6 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     public WebElement successMessage;
 
-    public WebElement getSuccessMessage() {
-        return successMessage;
-    }
-
     @FindBy(xpath = "//div[contains(text(),'already')]")
     public WebElement existMessage;
 
@@ -95,46 +91,51 @@ public class DialogContent extends Parent {
     @FindBy(css = "dynamic-view[class='ng-star-inserted']")
     private WebElement dynamicMessage; // Resul ekledi genel kullanıma uygun dinamik sayfa mesajı
 
+    @FindBy(xpath = "//ms-text-field/input")
+    private WebElement descriptionInputSearch;
+
+    @FindBy(xpath = "(//mat-form-field)[2]")
+    private WebElement integrationCodeSearch;
+
+    @FindBy(css = "[formcontrolname='description']>input")
+    private WebElement descriptionInput;
+
+    @FindBy(css = "[formcontrolname='code']>input")
+    private WebElement integrationInput;
+
+    @FindBy(xpath="//ms-integer-field[@formcontrolname='priority']/input")
+    private WebElement priorityCode;
+
+    @FindBy(xpath="//mat-slide-toggle[@formcontrolname='active']")
+    private WebElement toggleBar;
 
 
     public WebElement getWebElement(String element) {
         switch (element) {
-            case "addButton":
-                return addButton;
-            case "saveButton":
-                return saveButton;
-            case "nameInput":
-                return nameInput;
-            case "nameAttestation":
-                return nameAttestation;
-            case "codeInput":
-                return codeInput;
-            case "section":
-                return section;
-            case "shortName":
-                return shortName;
-            case "FormAddBtn":
-                return FormAddBtn;
-            case "lastItemEditBtn":
-                return lastItemEditBtn;
-            case "lastItemDeleteBtn":
-                return lastItemDeleteBtn;
-            case "deleteDialogBtn":
-                return deleteDialogBtn;
-            case "searchButton":
-                return searchButton;
-            case "editButton":
-                return editButton;
-            case "deleteButton":
-                return deleteButton;
-            case "deleteConfirmButton":
-                return deleteConfirmButton;
+            case "addButton": return addButton;
+            case "saveButton": return saveButton;
+            case "nameInput": return nameInput;
+            case "nameAttestation": return nameAttestation;
+            case "codeInput": return codeInput;
+            case "section": return section;
+            case "shortName": return shortName;
+            case "FormAddBtn": return FormAddBtn;
+            case "lastItemEditBtn": return lastItemEditBtn;
+            case "lastItemDeleteBtn": return lastItemDeleteBtn;
+            case "deleteDialogBtn": return deleteDialogBtn;
+            case "searchButton": return searchButton;
+            case "editButton": return editButton;
+            case "deleteButton": return deleteButton;
+            case "deleteConfirmButton": return deleteConfirmButton;
             case "nameInput2":return nameInput2;
             case "dynamicMessage": return dynamicMessage;
             case "nameSearch" : return nameSearch;
-
+            case "descriptionInputSearch" : return descriptionInputSearch;
+            case "priorityCode" : return priorityCode;
+            case "toggleBar" : return toggleBar;
+            case "integrationInput" : return integrationInput;
+            case "descriptionInput" : return descriptionInput;
         }
-
 
         return null;
     }
