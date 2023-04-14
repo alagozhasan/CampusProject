@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LeftNav extends Parent{
+public class LeftNav extends Parent {
     public LeftNav() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
@@ -33,11 +33,13 @@ public class LeftNav extends Parent{
 
     @FindBy(xpath = "//span[text()='Attestations']")
     public WebElement attestations;
+    @FindBy(xpath = "//span[text()='Positions']")
+    public WebElement positions;
 
 
     public WebElement getWebElement(String element) {
 
-        switch (element){
+        switch (element) {
             case "setup":
                 return setup;
             case "schoolSetup":
@@ -45,8 +47,10 @@ public class LeftNav extends Parent{
             case "schoolDepartments":
                 return schoolDepartments;
 
-            case "SetupArrow": return SetupArrow;
-            case "schoolSetupArrow": return schoolSetupArrow;
+            case "SetupArrow":
+                return SetupArrow;
+            case "schoolSetupArrow":
+                return schoolSetupArrow;
 
             case "humanResources":
                 return humanResources;
@@ -54,6 +58,9 @@ public class LeftNav extends Parent{
                 return hRSetup;
             case "attestations":
                 return attestations;
+            case "positions":
+                return positions;
         }
-        return null;}
+        return null;
+    }
 }
