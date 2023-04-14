@@ -25,7 +25,14 @@ public class LeftNav extends Parent{
     @FindBy(xpath = "(//span[text()='School Setup']/../fa-icon)[2]")
     private WebElement schoolSetupArrow;
 
+    @FindBy(xpath = "//span[text()='Human Resources']")
+    public WebElement humanResources;
 
+    @FindBy(xpath = "(//span[text()='Setup'])[3]")
+    public WebElement hRSetup;
+
+    @FindBy(xpath = "//span[text()='Attestations']")
+    public WebElement attestations;
 
 
     public WebElement getWebElement(String element) {
@@ -37,8 +44,16 @@ public class LeftNav extends Parent{
                 return schoolSetup;
             case "schoolDepartments":
                 return schoolDepartments;
+
             case "SetupArrow": return SetupArrow;
             case "schoolSetupArrow": return schoolSetupArrow;
+
+            case "humanResources":
+                return humanResources;
+            case "hRSetup":
+                return hRSetup;
+            case "attestations":
+                return attestations;
         }
         return null;}
 }
