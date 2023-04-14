@@ -1,4 +1,4 @@
-Feature: Add-Edit-Delete operations in the Position Page
+Feature: Add-Edit-Delete operations in the Positions Page
 
   Background:
     Given Navigate to Campus
