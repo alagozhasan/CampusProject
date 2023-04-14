@@ -34,6 +34,10 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     public WebElement successMessage;
 
+    public WebElement getSuccessMessage() {
+        return successMessage;
+    }
+
     @FindBy(xpath = "//div[contains(text(),'already')]")
     public WebElement existMessage;
 
@@ -85,6 +89,13 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement deleteDialogBtn;
 
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='name']/input")
+    private WebElement nameInput2; // Resul
+
+    @FindBy(css = "dynamic-view[class='ng-star-inserted']")
+    private WebElement dynamicMessage; // Resul ekledi genel kullanıma uygun dinamik sayfa mesajı
+
+
 
     public WebElement getWebElement(String element) {
         switch (element) {
@@ -118,6 +129,9 @@ public class DialogContent extends Parent {
                 return deleteButton;
             case "deleteConfirmButton":
                 return deleteConfirmButton;
+            case "nameInput2":return nameInput2;
+            case "dynamicMessage": return dynamicMessage;
+            case "nameSearch" : return nameSearch;
 
         }
 

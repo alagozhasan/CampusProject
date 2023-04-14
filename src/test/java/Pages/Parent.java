@@ -14,7 +14,7 @@ import java.time.Duration;
 public class Parent {
 
     WebDriverWait wait=new WebDriverWait(GWD.getDriver(),
-            Duration.ofSeconds(5));
+            Duration.ofSeconds(15));
 
     public void sendKeysFunction(WebElement element, String yazi)
     {
@@ -50,4 +50,7 @@ public class Parent {
     public void waitUntilClickable(WebElement element){
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
+
+
+
 }
