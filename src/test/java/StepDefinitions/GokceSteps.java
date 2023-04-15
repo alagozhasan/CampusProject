@@ -6,11 +6,9 @@ import Utilities.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.eo.Se;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -59,6 +57,7 @@ public class GokceSteps {
     }
     @And("Admin click edit button")
     public void adminClickEditButton() {
+        wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.clickFunction(dc.getWebElement("lastItemEditBtn"));
     }
     @And("Admin change name and code")
@@ -104,11 +103,32 @@ public class GokceSteps {
     @And("Admin add name, iban, currency and integration code")
     public void adminAddNameIbanCurrencyAndIntegrationCode() {
         dc.sendKeysFunction(dc.getWebElement("nameInput2"), "GokceBank");
-        dc.sendKeysFunction(dc.ibanInput, "TR1234124");
+        dc.sendKeysFunction(dc.ibanInput, "TR348007");
         dc.clickFunction(dc.currency);
-        wait.until(ExpectedConditions.visibilityOf(dc.currency));
-        Actions act=new Actions(GWD.getDriver());
-        act.moveToElement(dc.TRY).build().perform();
-        act.sendKeys(Keys.ENTER);
+        Actions act= new Actions(GWD.getDriver());
+        //act.moveToElement(dc.currency).build().perform();
+        act.sendKeys(Keys.ARROW_DOWN).build().perform();
+        act.sendKeys(Keys.ARROW_DOWN).build().perform();
+        act.sendKeys(Keys.ARROW_DOWN).build().perform();
+        act.sendKeys(Keys.ENTER).build().perform();
+        dc.sendKeysFunction(dc.integrationInput2, "0606");
+
+    }
+
+    @When("Admin write Bank name on the name text box to search")
+    public void adminWriteBankNameOnTheNameTextBoxToSearch() {
+        dc.sendKeysFunction(dc.getWebElement("nameSearch"), "GokceBank");
+    }
+
+    @And("Admin change name, iban, currency and integration code")
+    public void adminChangeNameIbanCurrencyAndIntegrationCode() {
+        dc.sendKeysFunction(dc.getWebElement("nameInput2"),"SasmazBank");
+        dc.sendKeysFunction(dc.ibanInput, "TR98769876");
+        dc.sendKeysFunction(dc.integrationInput2, "0707");
+    }
+
+    @When("Admin write new Bank name on the name text box to search")
+    public void adminWriteNewBankNameOnTheNameTextBoxToSearch() {
+        dc.sendKeysFunction(dc.getWebElement("nameSearch"), "SasmazBank");
     }
 }
