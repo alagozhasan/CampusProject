@@ -109,6 +109,14 @@ public class DialogContent extends Parent {
     @FindBy(xpath="//mat-slide-toggle[@formcontrolname='active']")
     private WebElement toggleBar;
 
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='iban']/input")
+    public WebElement ibanInput; // Gökçe
+
+    @FindBy(xpath = "(//span[text()='Currency'])[3]")
+    public WebElement currency; // Gökçe
+
+    @FindBy(xpath = "(//span[text()=' TRY ']")
+    public WebElement TRY;
 
     public WebElement getWebElement(String element) {
         switch (element) {
