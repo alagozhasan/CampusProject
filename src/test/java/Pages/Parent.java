@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -32,11 +33,10 @@ public class Parent {
 
     public void verifyContainsTextFunction(WebElement element, String value){
         wait.until(ExpectedConditions.textToBePresentInElement(element, value));
-        Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()),"bo such TEXT");
+        Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()),"No such TEXT"); //bo fixed
         new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).perform();
         // açık dialog kutusu varsa kapansın
     }
-
 
     public void scrollToElement(WebElement element){
         JavascriptExecutor js=(JavascriptExecutor) GWD.getDriver();
@@ -51,6 +51,10 @@ public class Parent {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
+    public void moveToElementAndClick(WebElement element){
+        Actions action=new Actions(GWD.getDriver());
+        action.moveToElement(element).click().perform();
+    }
 
 
 }

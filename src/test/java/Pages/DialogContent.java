@@ -55,6 +55,9 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//ms-text-field[@data-placeholder='Name']/input")
     private WebElement nameInput;
 
+    @FindBy(xpath = " //ms-text-field/input[@data-placeholder='Name']")
+    private WebElement searchName;    //we can delete nameSearch, niye ingilizce yazdım bilmiyorum, BankAccount un altındaki Name i de buluyo bu bulduğum Gökçenin sayfasında
+
     @FindBy(xpath = "//input[@id='ms-text-field-1']")
     public WebElement nameAttestation;
 
@@ -78,6 +81,9 @@ public class DialogContent extends Parent {
 
     @FindBy(xpath = "//span[text()=' Delete ']")
     public WebElement deleteConfirmButton;
+
+    @FindBy(xpath="//span[text()=' Cancel ']")
+    public WebElement cancelButton;
 
     @FindBy(tagName = "ms-delete-button")
     private WebElement lastItemDeleteBtn;
@@ -122,6 +128,18 @@ public class DialogContent extends Parent {
     public WebElement integrationInput2;
 
 
+    @FindBy(xpath = "(//div[contains(@class,'form-field')]//mat-select[@role='combobox'])[2]/div")
+    private WebElement fieldType;
+
+    @FindBy(xpath = "(//span[@class='mat-option-text'])[6]")
+    private WebElement optionLogical;
+    @FindBy(xpath="//td[contains(@class,'mat-cell')][text()='Jhon Wick']")
+    private WebElement searchResult;
+
+    public WebElement getSearchResult() {
+        return searchResult;
+    }
+
     public WebElement getWebElement(String element) {
         switch (element) {
             case "addButton": return addButton;
@@ -147,6 +165,10 @@ public class DialogContent extends Parent {
             case "toggleBar" : return toggleBar;
             case "integrationInput" : return integrationInput;
             case "descriptionInput" : return descriptionInput;
+            case "fieldType" : return fieldType;
+            case "optionLogical" : return optionLogical;
+            case "searchName" : return searchName;
+            case "cancelButton" : return cancelButton;
         }
 
         return null;
