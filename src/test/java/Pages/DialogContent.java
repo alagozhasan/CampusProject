@@ -136,6 +136,20 @@ public class DialogContent extends Parent {
     @FindBy(xpath="//td[contains(@class,'mat-cell')][text()='Jhon Wick']")
     private WebElement searchResult;
 
+    @FindBy(xpath="//span[@class='mat-option-text']")
+    private WebElement LocationType; // merve d ekledi
+
+    @FindBy(xpath="//ms-integer-field[@formcontrolname='capacity']/input")
+    private WebElement capacity; // merve d ekledi
+
+    @FindBy(xpath="//ms-integer-field[@formcontrolname='order']/input")
+    private WebElement order; // merve d ekledi
+
+    @FindBy(xpath="//span[@class='mat-option-text'] ")
+    private WebElement nextGrade; // merve d ekledi
+
+
+
     public WebElement getSearchResult() {
         return searchResult;
     }
@@ -169,6 +183,12 @@ public class DialogContent extends Parent {
             case "optionLogical" : return optionLogical;
             case "searchName" : return searchName;
             case "cancelButton" : return cancelButton;
+            case "capacity" : return capacity;
+            case "order" : return order;
+            case "nextGrade" : return nextGrade;
+
+
+
         }
 
         return null;
