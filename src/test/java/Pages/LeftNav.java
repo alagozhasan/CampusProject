@@ -63,7 +63,7 @@ public class LeftNav extends Parent {
     public WebElement bankAccount;
 
     @FindBy(xpath = "//span[text()='Grade Levels']")
-    private WebElement gradeLevels; // merve d ekledi
+    private WebElement gradeLevels;
 
     public WebElement getWebElement(String element) {
 
