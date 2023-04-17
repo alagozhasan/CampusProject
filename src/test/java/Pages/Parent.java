@@ -6,10 +6,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
 import java.time.Duration;
 
 public class Parent {
@@ -17,12 +15,13 @@ public class Parent {
     WebDriverWait wait=new WebDriverWait(GWD.getDriver(),
             Duration.ofSeconds(15));
 
+
     public void sendKeysFunction(WebElement element, String yazi)
     {
-        waitUntilVisible(element); // gözükene kadar bekle
-        scrollToElement(element);  // scroll yap
-        element.clear();           // temizle
-        element.sendKeys(yazi);    // gönder
+        waitUntilVisible(element);
+        scrollToElement(element);
+        element.clear();
+        element.sendKeys(yazi);
     }
 
     public void clickFunction(WebElement element){
@@ -35,7 +34,7 @@ public class Parent {
         wait.until(ExpectedConditions.textToBePresentInElement(element, value));
         Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()),"No such TEXT"); //bo fixed
         new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).perform();
-        // açık dialog kutusu varsa kapansın
+
     }
 
     public void scrollToElement(WebElement element){
@@ -51,10 +50,12 @@ public class Parent {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
+
     public void moveToElementAndClick(WebElement element){
         Actions action=new Actions(GWD.getDriver());
         action.moveToElement(element).click().perform();
     }
 
+    }
 
-}
+

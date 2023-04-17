@@ -92,10 +92,9 @@ public class DialogContent extends Parent {
     public WebElement deleteDialogBtn;
 
     @FindBy(xpath = "//ms-text-field[@formcontrolname='name']/input")
-    private WebElement nameInput2; // Resul
-
+    private WebElement nameInput2;
     @FindBy(css = "dynamic-view[class='ng-star-inserted']")
-    private WebElement dynamicMessage; // Resul ekledi genel kullanıma uygun dinamik sayfa mesajı
+    private WebElement dynamicMessage;
 
     @FindBy(xpath = "//ms-text-field/input")
     private WebElement descriptionInputSearch;
@@ -136,17 +135,24 @@ public class DialogContent extends Parent {
     @FindBy(xpath="//td[contains(@class,'mat-cell')][text()='Jhon Wick']")
     private WebElement searchResult;
 
-    @FindBy(xpath="//span[@class='mat-option-text']")
-    private WebElement LocationType; // merve d ekledi
 
     @FindBy(xpath="//ms-integer-field[@formcontrolname='capacity']/input")
-    private WebElement capacity; // merve d ekledi
+    private WebElement capacity;
 
-    @FindBy(xpath="//ms-integer-field[@formcontrolname='order']/input")
-    private WebElement order; // merve d ekledi
+    @FindBy(css="[formcontrolname='order']>input")
+    private WebElement order;
 
     @FindBy(xpath="//span[@class='mat-option-text'] ")
-    private WebElement nextGrade; // merve d ekledi
+    private WebElement nextGrade;
+
+    @FindBy(xpath = "//tr[@role='row']/td[2]")
+    public List<WebElement> nameList;
+
+    @FindBy(css = "[role='columnheader']")
+    public WebElement orderSearchName;
+
+
+
 
 
 
