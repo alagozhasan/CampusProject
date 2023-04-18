@@ -126,6 +126,8 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "(//div[@role='listbox']//span)[1]")  //Merve Arslan
     public WebElement  studentRegistration;
 
+    @FindBy(xpath = "(//div[@role='listbox']//span)[2]")  //Merve Arslan
+    public WebElement  examination;
 
     @FindBy(xpath = "//ms-text-field[@formcontrolname='iban']/input")
     public WebElement ibanInput; // Gökçe
@@ -205,6 +207,7 @@ public class DialogContent extends Parent {
             case "documentNameInput" : return documentNameInput;
             case "stage" : return stage;
             case "studentRegistration" : return studentRegistration;
+            case "examination" : return examination;
 
 
 
