@@ -117,6 +117,16 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//ms-text-field/input")
     public WebElement nameInput3;
 
+    @FindBy(xpath = "(//ms-text-field/input)[2]")
+    public WebElement documentNameInput; //Merve Arslan diğer name ler bulmadı malesef ekleme yapmak zorunda kaldım
+
+    @FindBy(xpath = "((//mat-select[@role='combobox'])[3]//div)[3]")  //Merve Arslan
+    public  WebElement stage;
+
+    @FindBy(xpath = "(//div[@role='listbox']//span)[1]")  //Merve Arslan
+    public WebElement  studentRegistration;
+
+
     @FindBy(xpath = "//ms-text-field[@formcontrolname='iban']/input")
     public WebElement ibanInput; // Gökçe
 
@@ -192,6 +202,12 @@ public class DialogContent extends Parent {
             case "capacity" : return capacity;
             case "order" : return order;
             case "nextGrade" : return nextGrade;
+            case "documentNameInput" : return documentNameInput;
+            case "stage" : return stage;
+            case "studentRegistration" : return studentRegistration;
+
+
+
 
 
 
