@@ -9,10 +9,11 @@ import org.testng.Assert;
 import java.util.List;
 
 public class BurcuSteps {
-    DialogContent dc=new DialogContent();
+    DialogContent dc = new DialogContent();
+
     @And("Select an element on Form")
     public void selectAnElementOnForm(DataTable dt) {
-       List <List<String>> dropDown = dt.asLists(String.class);
+        List<List<String>> dropDown = dt.asLists(String.class);
 
         for (int i = 0; i < dropDown.size(); i++) {
             WebElement e = dc.getWebElement(dropDown.get(i).get(0));
@@ -21,8 +22,10 @@ public class BurcuSteps {
         }
 
     }
-    @Then("Verify that the searched item still on the list")
-    public void verifyThatTheSearchedItemStillOnTheList() {
-        dc.verifyContainsTextFunction(dc.getSearchResult(), "Jhon Wick");
+
+    @Then("Verify that the searched {string} still on the list")
+    public void verifyThatTheSearchedNameStillOnTheList(String str) {
+        Assert.assertEquals(dc.getSearchResult().getText(), str);
     }
+
 }

@@ -46,6 +46,17 @@ Feature: Add-Edit-Delete operations in the Fields Page
       | saveButton |
     Then Verify the notification message that is successfully
 
+  Scenario: Give up deleting the field by clicking Cancel on Fields Page
+    When Send key in Dialog
+      | searchName | Field_Dnz_Edit|
+    And Click on the element in Dialog
+      | searchButton |
+    And Click on the stale element in Dialog
+      | deleteButton |
+    And Click on the element in Dialog
+      | cancelButton |
+    Then Verify that the searched 'Field_Dnz_Edit' still on the list
+
   Scenario: Delete the added field in the Fields Page
     When Send key in Dialog
       | searchName | Field_Dnz_Edit |
@@ -57,13 +68,3 @@ Feature: Add-Edit-Delete operations in the Fields Page
       | deleteConfirmButton |
     Then Verify the notification message that is successfully
 
-  Scenario: Give up deleting the field by clicking Cancel on Fields Page
-    When Send key in Dialog
-      | searchName | Jhon Wick|
-    And Click on the element in Dialog
-      | searchButton |
-    And Click on the stale element in Dialog
-      | deleteButton |
-    And Click on the element in Dialog
-      | cancelButton |
-    Then Verify that the searched item still on the list
