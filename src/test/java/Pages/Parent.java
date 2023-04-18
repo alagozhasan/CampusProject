@@ -25,6 +25,7 @@ public class Parent {
     }
 
     public void clickFunction(WebElement element){
+        waitUntilVisible(element);   //Merve A  Hata alırsanız silebilirsiniz ben kendi case i mi düzeltirim
         waitUntilClickable(element);
         scrollToElement(element);
         element.click();
