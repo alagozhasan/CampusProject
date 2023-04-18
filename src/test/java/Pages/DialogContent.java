@@ -132,7 +132,7 @@ public class DialogContent extends Parent {
 
     @FindBy(xpath = "(//span[@class='mat-option-text'])[6]")
     private WebElement optionLogical;
-    @FindBy(xpath="//td[contains(@class,'mat-cell')][text()='Jhon Wick']")
+    @FindBy(xpath="(//td[contains(@class,'mat-cell')])[2]")
     private WebElement searchResult;
 
 
