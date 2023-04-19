@@ -75,10 +75,11 @@ Feature: Add-Edit-Delete operations in the Attentions
 
     And Click on the element in Dialog
       | searchButton |
-
-    When Click on the element in Dialog
-      | lastItemDeleteBtn |
-      | deleteDialogBtn   |
+    And Click on the stale element in Dialog
+      | deleteButton |
+    And Click on the element in Dialog
+      | deleteConfirmButton |
+    Then Verify the notification message that is successfully
 
     Then Verify that notification messages “Attestation successfully deleted”
 
