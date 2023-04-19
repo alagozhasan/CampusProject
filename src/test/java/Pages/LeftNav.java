@@ -35,11 +35,18 @@ public class LeftNav extends Parent {
     @FindBy(xpath = "(//span[text()='Setup'])[3]")
     public WebElement hRSetup;
 
+    @FindBy(xpath = "(//span[text()='Setup'])[3]/../fa-icon[2]")
+    public WebElement hRSetupArrow;
+
+
     @FindBy(xpath = "//span[text()='Attestations']")
     public WebElement attestations;
 
     @FindBy(xpath = "//span[text()='Positions']")
     private WebElement positions;
+
+    @FindBy(xpath = "//span[text()='Position Categories']")
+    private WebElement positionCategories;
 
     @FindBy(xpath = "//span[text()='Discounts']")
     private WebElement discounts;
@@ -74,22 +81,42 @@ public class LeftNav extends Parent {
     public WebElement getWebElement(String element) {
 
         switch (element) {
-            case "setup": return setup;
-            case "schoolSetup": return schoolSetup;
-            case "schoolDepartments": return schoolDepartments;
-            case "SetupArrow": return SetupArrow;
-            case "schoolSetupArrow": return schoolSetupArrow;
-            case "humanResources": return humanResources;
-            case "hRSetup": return hRSetup;
-            case "attestations": return attestations;
-            case "positions": return positions;
-            case "discounts": return discounts;
-            case "parameters" : return parameters;
-            case "fields" : return fields;
-            case "schoolLocations": return schoolLocations;
-            case "gradeLevels": return gradeLevels;
-            case "nationalities" : return nationalities;
-            case "documentTypes": return documentTypes;
+            case "setup":
+                return setup;
+            case "schoolSetup":
+                return schoolSetup;
+            case "schoolDepartments":
+                return schoolDepartments;
+            case "SetupArrow":
+                return SetupArrow;
+            case "schoolSetupArrow":
+                return schoolSetupArrow;
+            case "humanResources":
+                return humanResources;
+            case "hRSetup":
+                return hRSetup;
+            case "hRSetupArrow":
+                return hRSetupArrow;
+            case "attestations":
+                return attestations;
+            case "positions":
+                return positions;
+            case "discounts":
+                return discounts;
+            case "parameters":
+                return parameters;
+            case "fields":
+                return fields;
+            case "schoolLocations":
+                return schoolLocations;
+            case "gradeLevels":
+                return gradeLevels;
+            case "nationalities":
+                return nationalities;
+            case "documentTypes":
+                return documentTypes;
+            case "positionCategories":
+                return positionCategories;
         }
         return null;
     }

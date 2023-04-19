@@ -76,7 +76,7 @@ public class Hasan2Steps {
 
     @Then("verify process but negative")
     public void verifyProcessButNegative() {
-        dc.verifyContainsTextFunction(dc.successMessage, "already");
+        dc.verifyContainsTextFunction(dc.existMessage, "already");
     }
 
     @Then("Read on list,for search my data name")
