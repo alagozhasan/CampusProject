@@ -35,7 +35,6 @@ public class Parent {
         wait.until(ExpectedConditions.textToBePresentInElement(element, value));
         Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()),"No such TEXT"); //bo fixed
         new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).perform();
-
     }
 
     public void scrollToElement(WebElement element){
@@ -56,7 +55,6 @@ public class Parent {
         Actions action=new Actions(GWD.getDriver());
         action.moveToElement(element).click().perform();
     }
-
     }
 
 

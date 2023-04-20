@@ -1,4 +1,4 @@
-Feature:
+Feature: As an Admin User I should be able to Add-Edit-Delete Department Under School Setup
 
   Background:
     Given Navigate to Campus
@@ -8,12 +8,6 @@ Feature:
       | setup             |
       | schoolSetup       |
       | schoolDepartments |
-  Scenario: closing test of Dropdown menus
-
-    Then Click on the leftnav arrow
-      | schoolSetupArrow |
-      | SetupArrow       |
-      And verify dropdown menu
 
   Scenario: Fill in the information and add, for the department
 
@@ -22,13 +16,11 @@ Feature:
     And Fill out the form
       | nameInput2 | Aircraft technician |
       | codeInput | AT0034              |
-
     And Click on the element in Dialog
       | section |
-
-    Then Fill out the form
-      | nameInput2 | Aircraft Maintenance |
+    Then Fill out the form stale element
       | shortName | ATM01                |
+      | nameInput2 | Aircraft Maintenance |
     And Click on the element in Dialog
       | FormAddBtn |
       | saveButton |
@@ -42,13 +34,11 @@ Feature:
     And Fill out the form
       | nameInput2 | Aircraft technician |
       | codeInput | AT0034              |
-
     And Click on the element in Dialog
       | section |
-
-    Then Fill out the form
-      | nameInput2 | Aircraft Maintenance |
+    Then Fill out the form stale element
       | shortName | ATM01                |
+      | nameInput2 | Aircraft Maintenance |
     And Click on the element in Dialog
       | FormAddBtn |
       | saveButton |
@@ -59,22 +49,11 @@ Feature:
 
     When Click on the element in Dialog
       | lastItemEditBtn |
-
     And Fill out the form
       | nameInput2 | Aircraft Technician |
       | codeInput | AT0034              |
-
     And Click on the element in Dialog
-      | section |
-
-    Then Fill out the form
-      | nameInput2 | Line Maintenance |
-      | shortName | ATL01            |
-
-    And Click on the element in Dialog
-      | FormAddBtn |
       | saveButton |
-
     Then verify process
 
   Scenario:It should be able to be deleted by clicking the delete button and confirming it
@@ -82,9 +61,7 @@ Feature:
     When Click on the element in Dialog
       | lastItemDeleteBtn |
       | deleteDialogBtn   |
-
     Then verify process
 
   Scenario: Should not be deleted.
-
     Then Read on list,for search my data name
