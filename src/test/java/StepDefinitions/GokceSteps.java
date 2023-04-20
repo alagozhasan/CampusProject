@@ -25,6 +25,7 @@ public class GokceSteps {
         ln.clickFunction(ln.educationSetup);
         ln.clickFunction(ln.subjectCat);
     }
+
     @When("Admin click on the Add Subject Category")
     public void adminClickOnTheAddSubjectCategory() {
         dc.clickFunction(dc.getWebElement("addButton"));
@@ -35,31 +36,38 @@ public class GokceSteps {
         dc.sendKeysFunction(dc.getWebElement("nameInput2"), "SDLC");
         dc.sendKeysFunction(dc.getWebElement("codeInput"),"9876");
     }
+
     @And("Admin click save button")
     public void adminClickSaveButton() {
         dc.clickFunction(dc.getWebElement("saveButton"));
     }
+
     @Then("Admin will see success message")
     public void adminWillSeeSuccessMessage() {
         dc.verifyContainsTextFunction(dc.getWebElement("dynamicMessage"), "success");
     }
+
     @Then("Admin will see unsuccessfull message")
     public void adminWillSeeUnsuccessfullMessage() {
         dc.verifyContainsTextFunction(dc.getWebElement("dynamicMessage"), "already");
     }
+
     @When("Admin write Subject name on the name text box to search")
     public void adminWriteSubjectNameOnTheNameTextBoxToSearch() {
         dc.sendKeysFunction(dc.getWebElement("nameSearch"), "SDLC");
     }
+
     @And("Admin click search button")
     public void adminClickSearchButton() {
         dc.clickFunction(dc.getWebElement("searchButton"));
     }
+
     @And("Admin click edit button")
     public void adminClickEditButton() {
         wait.until(ExpectedConditions.elementToBeClickable(dc.searchButton));
         dc.clickFunction(dc.getWebElement("lastItemEditBtn"));
     }
+
     @And("Admin change name and code")
     public void adminChangeNameAndCode() {
         dc.sendKeysFunction(dc.getWebElement("nameInput2"), "Java");
@@ -84,10 +92,8 @@ public class GokceSteps {
     @Then("Admin will see no data message")
     public void adminWillSeeNoDataMessage() {
         dc.verifyContainsTextFunction(dc.noDisplayMessage, "no data");
-
     }
 
-    //Bank Account Functionality
     @When("Admin click Setup-Parameters-Bank Account")
     public void adminClickSetupParametersBankAccount() {
         ln.clickFunction(ln.setup);
@@ -106,13 +112,11 @@ public class GokceSteps {
         dc.sendKeysFunction(dc.ibanInput, "TR348007");
         dc.clickFunction(dc.currency);
         Actions act= new Actions(GWD.getDriver());
-        //act.moveToElement(dc.currency).build().perform();
         act.sendKeys(Keys.ARROW_DOWN).build().perform();
         act.sendKeys(Keys.ARROW_DOWN).build().perform();
         act.sendKeys(Keys.ARROW_DOWN).build().perform();
         act.sendKeys(Keys.ENTER).build().perform();
         dc.sendKeysFunction(dc.integrationInput2, "0606");
-
     }
 
     @When("Admin write Bank name on the name text box to search")

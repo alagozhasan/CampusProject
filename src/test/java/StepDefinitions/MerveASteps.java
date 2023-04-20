@@ -24,10 +24,5 @@ public class MerveASteps {
         }
         Actions actions=new Actions(GWD.getDriver());
         actions.sendKeys(Keys.ESCAPE).build().perform();
-
-
-
-
-
     }
 }
