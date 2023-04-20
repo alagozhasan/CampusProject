@@ -20,14 +20,14 @@ Feature:
     And Click on the element in Dialog
       | addButton |
     And Fill out the form
-      | nameInput | Aircraft technician |
+      | nameInput2 | Aircraft technician |
       | codeInput | AT0034              |
 
     And Click on the element in Dialog
       | section |
 
     Then Fill out the form
-      | nameInput | Aircraft Maintenance |
+      | nameInput2 | Aircraft Maintenance |
       | shortName | ATM01                |
     And Click on the element in Dialog
       | FormAddBtn |
@@ -40,14 +40,14 @@ Feature:
     And Click on the element in Dialog
       | addButton |
     And Fill out the form
-      | nameInput | Aircraft technician |
+      | nameInput2 | Aircraft technician |
       | codeInput | AT0034              |
 
     And Click on the element in Dialog
       | section |
 
     Then Fill out the form
-      | nameInput | Aircraft Maintenance |
+      | nameInput2 | Aircraft Maintenance |
       | shortName | ATM01                |
     And Click on the element in Dialog
       | FormAddBtn |
@@ -61,14 +61,14 @@ Feature:
       | lastItemEditBtn |
 
     And Fill out the form
-      | nameInput | Aircraft Technician |
+      | nameInput2 | Aircraft Technician |
       | codeInput | AT0034              |
 
     And Click on the element in Dialog
       | section |
 
     Then Fill out the form
-      | nameInput | Line Maintenance |
+      | nameInput2 | Line Maintenance |
       | shortName | ATL01            |
 
     And Click on the element in Dialog

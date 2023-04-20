@@ -32,7 +32,7 @@ Feature: As an Admin User I should be able to Add-Edit-Delete Position Categorie
 
     When Fill out the form
       | searchName | Software Architect |
-    Then Click on the element in Dialog
+    Then Click on the stale element in Dialog
       | searchButton |
       | editButton   |
     When Fill out the form
@@ -45,7 +45,7 @@ Feature: As an Admin User I should be able to Add-Edit-Delete Position Categorie
   Scenario:As an Admin User I should be able to Delete Position Categories Under Human Resources Setup
     When Fill out the form
       | searchName | Software Architect |
-    Then Click on the element in Dialog
+    Then Click on the stale element in Dialog
       | searchButton |
       | deleteButton |
     Then Click on the element in Dialog
