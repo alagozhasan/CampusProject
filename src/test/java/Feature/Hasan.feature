@@ -33,8 +33,8 @@ Feature: As an Admin User I should be able to Add-Edit-Delete Position Categorie
     When Fill out the form
       | searchName | Software Architect |
     Then Click on the element in Dialog
-      | searchButton    |
-      | lastItemEditBtn |
+      | searchButton |
+      | editButton   |
     When Fill out the form
       | nameInput2 | Ninja Coder |
     Then Click on the element in Dialog
@@ -46,8 +46,8 @@ Feature: As an Admin User I should be able to Add-Edit-Delete Position Categorie
     When Fill out the form
       | searchName | Software Architect |
     Then Click on the element in Dialog
-      | searchButton      |
-      | lastItemDeleteBtn |
+      | searchButton |
+      | deleteButton |
     Then Click on the element in Dialog
       | deleteDialogBtn |
     And verify process
@@ -57,8 +57,5 @@ Feature: As an Admin User I should be able to Add-Edit-Delete Position Categorie
     When Fill out the form
       | searchName | Software Architect |
     Then Click on the element in Dialog
-      | searchButton      |
-      | lastItemDeleteBtn |
-    Then Click on the element in Dialog
-      | deleteDialogBtn |
+      | searchButton |
     Then Verify that notification messages “There is no data to display”
