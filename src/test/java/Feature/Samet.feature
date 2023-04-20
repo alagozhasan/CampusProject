@@ -42,7 +42,7 @@ Feature: Add-Edit-Delete operations in the Attentions
     And Click on the element in Dialog
       | searchButton |
 
-    And Click on the element in Dialog
+    And Click on the stale element in Dialog
       | editButton |
 
     And Fill out the form
